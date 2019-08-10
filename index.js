@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 const {USER, PASS, CLUSTER_NAME, DB_NAME, PORT} = require('./constants')
 const event = require('./usecases/event')
@@ -8,6 +9,7 @@ const MONGO_DB_URL = `mongodb+srv://${USER}:${PASS}@${CLUSTER_NAME}-euytd.mongod
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
 app.get('/events', async(request, response)=>{
     try{
