@@ -11,12 +11,7 @@ app.use(express.json())
 
 app.get('/events', async(request, response)=>{
     try{
-        let allEvents
-        if(request.query.name){
-            allEvents = await event.getByName(request.query.name)
-        }else{
-            allEvents = await event.getAll()
-        }
+        const allEvents = await event.getAll(request.query)
         // throw new Error('Halp!')
         response.json({
             success: true,

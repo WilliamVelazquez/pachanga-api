@@ -6,8 +6,11 @@ function create({ name, date, items, location }){
     return Event.create({ name, location, items, date })
 }
 
-function getAll(){
-    return Event.find({}).lean()
+function getAll(queries){
+    if(Object.keys(queries).length>0 && queries.name)
+        return Event.find({name: new RegExp(queries.name, 'i')}).lean()
+    else
+        return Event.find({}).lean()
 }
 
 function getById(id){
