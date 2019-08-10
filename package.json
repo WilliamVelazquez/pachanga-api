@@ -1,0 +1,20 @@
+{
+  "name": "pachanga-api",
+  "version": "1.0.0",
+  "description": "API para organizar pachangas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "pachanga",
+    "fiesta",
+    "express"
+  ],
+  "author": "@WilliamVelazquez",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.17.1"
+  }
+}
